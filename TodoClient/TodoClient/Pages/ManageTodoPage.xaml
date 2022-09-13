@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodoClient.Pages.ManageTodoPage"
+             >
+    <Grid RowDefinitions="Auto,Auto,*,Auto" ColumnDefinitions="*,*,*">
+        <TableView Intent="Data" Grid.Row="0" Grid.ColumnSpan="3">
+            <TableRoot>
+                <TableSection Title="What do you want to do?">
+                    <EntryCell x:Name="TitleCell" Placeholder="Enter title" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <Editor Margin="20" Grid.Row="1" 
+                 Grid.ColumnSpan="3"
+                x:Name="DescriptionCell"  
+                Placeholder="Enter description"
+                HeightRequest="250"
+        />
+        <StackLayout Grid.Row="2"></StackLayout>
+        <Button Text="Save" Grid.Row="3" Grid.Column="0" Clicked="OnSaveButtonClicked" Margin="20,5"/>
+        <Button Text="Delete" Grid.Row="3" Grid.Column="1"  Clicked="OnDeleteButtonClicked" Margin="0,5" />
+        <Button Text="Cancel" Grid.Row="3" Grid.Column="2" Clicked="OnCancelButtonClicked" Margin="20,5"/>
+    </Grid>
+</ContentPage>
